@@ -42,7 +42,7 @@
 /* Variables */
 
 $topHeight: 100px;
-$baseContainerMargin: 85px;
+$baseContainerMargin: 150px;
 $titleMargin: 20px;
 $textMargin: 80px;
 
@@ -114,7 +114,10 @@ a {
 
 .container {
   height: 100%;
-  margin: $baseContainerMargin;
+  margin-left: $baseContainerMargin;
+  margin-right: $baseContainerMargin;
+  margin-bottom: $baseContainerMargin;
+  margin-top: $baseContainerMargin / 1.5;
   @include fade-in();
 }
 
