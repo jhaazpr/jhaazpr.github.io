@@ -209,17 +209,17 @@ a {
     display: inline-block; }
   .top .logo {
     font-weight: 800;
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 40px;
     margin-left: 40px;
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
 
 .container {
   height: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 10%;
-  margin-top: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 15%;
+  margin-top: 7.5%;
   -webkit-animation: fadein 1.5s;
   /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.5s;
