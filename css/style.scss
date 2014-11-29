@@ -1,0 +1,75 @@
+@import '../jeet/index';
+
+@include edit();
+
+$topHeight: 100px;
+$baseContainerMargin: 85px;
+$titleMargin: 20px;
+$textMargin: 80px;
+
+$grey: #7e7e7e;
+$black: #000000;
+
+$textSize: 12px;
+$textLineHeight: 2;
+
+* {
+  font-family: 'Source Code Pro', 'Helvatica Neue', sans-serif;
+}
+
+body {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+strong {
+  font-weight: 800;
+  color: $black;
+}
+
+.top {
+  height: $topHeight;
+  width: 100%;
+
+  nav li {
+    display: inline-block;
+  }
+
+  .logo {
+    right: 0px;
+  }
+}
+
+.container {
+  height: 100%;
+  margin: $baseContainerMargin;
+}
+
+.content {
+  article {
+    @include col(1/2);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .title {
+      margin-top: $titleMargin;
+      margin-bottom: $titleMargin;
+      font-weight: 800;
+    }
+    .text {
+      margin-top: $textMargin;
+      margin-bottom: $textMargin;
+      color: $grey;
+      font-size: $textSize;
+      line-height: $textLineHeight;
+    }
+  }
+}
+
+.bottom {
+  height: $topHeight;
+  width: 100%;
+  bottom: 0px;  
+}

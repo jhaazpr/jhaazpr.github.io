@@ -1,5 +1,5 @@
 // [module names]
-var app = angular.module('templateApp', ['ui.router', 'ngTouch']); 
+var app = angular.module('KiddApp', ['ui.router', 'ngTouch']); 
 
 // app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
 // 	function($stateProvider, $urlRouterProvider, $locationProvider) {

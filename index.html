@@ -1,50 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>MiniAngular</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
-    <!-- ANGULAR -->
-    <script src="./js/libs/angular.min.js"></script>
-    <script src="./js/libs/angular-ui-router.min.js"></script>
-    <script src="./js/libs/angular-touch.min.js"></script>
-    <script src="./js/libs/angular-animate.min.js"></script>
-
-    <!-- ANGULAR CUSTOM -->
-    <script src="./app.js"></script>
-    <script src="./js/controllers/NameTemplateController.js"></script>
-  </head>
-
-  <body data-ng-app="templateApp">
-    <div data-ng-controller="NameTemplateController" class="wrapper">
-      <div id="form-wrapper" data-ng-hide="submitted">
-        <p>Form</p>
-        <form>
-            <p>First Name</p>
-            <input type="text" data-ng-model="first"></input><br>
-            <p>Last Name</p>
-            <input type="text" data-ng-model="last"></input><br>
-            <p>Email</p>
-            <input type="email" data-ng-model="email"></input><br>
-            <p>Phone Number</p>
-            <input type="phone" data-ng-model="number"></input><br>
-        </form>
-      </div>
-      <br>
-      <p>Template</p>
-      <p>{{ first }} {{ last }}</p>
-      <p>{{ email }}</p>
-      <p>{{ number }}</p>
-      <button data-ng-click="submit()" id="btn" data-ng-hide="submitted">
-        Click me!
-      </button>
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="top">
+  <div class="logo">Jasper O'Leary</div>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Projects</li>
+        <li>About</li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="content">
+      <article class="entry first">
+        <seciton class="image"><img src="assets/self.jpg"></section>
+        <section class="title">Title 1</section>
+        <section class="text">
+          <strong>Table of Contents</strong>: Technology and the Box, Padma Maitland;  Little Boxes: High-Tech and the Silicon Valley, Margaret Crawford;  A Container and Its Contents: Re-Reading Tomás Maldonado’s Design, Nature, and Revolution: Toward a Critical Ecology (1970, trans. 1972), Simon Sadler;  Public, Private, Protected: Encapsulation and the Disempowerment of the Digital Architect; Kyle Steinfeld;  The Seduction of the Glass Box, Katie Ackerly;  Eiffel’s Apartment and the Architecture of Dreams, Gina Greene;  Averaging Mies, Ajay Manthripragada;  Transitional Objects: The Postwar Werkbund and the Design of New, West-German Subjects (1948-1968); Sasha Rossman;  The Fine Art of the Art Crate, Joey Enos;  A New Architecture for Man: The Modular, Prefabricated Buildings of Ernest J. Kump, Jr, Elaine Stiles;  Sun Valley, Brian Knecht;  Photography: IT House and Suberb-A House, Art Gray;  Considering Prefabulous and Almost Off the Grid, Lotus Grenier and Zoe Beba
+        </section>
+      </article>
+      <article class="entry second">
+        <seciton class="image"><img src="assets/self.jpg"></section>
+        <section class="title">Title 1</section>
+        <section class="text">
+          <strong>Table of Contents</strong>: Technology and the Box, Padma Maitland;  Little Boxes: High-Tech and the Silicon Valley, Margaret Crawford;  A Container and Its Contents: Re-Reading Tomás Maldonado’s Design, Nature, and Revolution: Toward a Critical Ecology (1970, trans. 1972), Simon Sadler;  Public, Private, Protected: Encapsulation and the Disempowerment of the Digital Architect; Kyle Steinfeld;  The Seduction of the Glass Box, Katie Ackerly;  Eiffel’s Apartment and the Architecture of Dreams, Gina Greene;  Averaging Mies, Ajay Manthripragada;  Transitional Objects: The Postwar Werkbund and the Design of New, West-German Subjects (1948-1968); Sasha Rossman;  The Fine Art of the Art Crate, Joey Enos;  A New Architecture for Man: The Modular, Prefabricated Buildings of Ernest J. Kump, Jr, Elaine Stiles;  Sun Valley, Brian Knecht;  Photography: IT House and Suberb-A House, Art Gray;  Considering Prefabulous and Almost Off the Grid, Lotus Grenier and Zoe Beba
+        </section>
+      </article>
     </div>
-  </body>
-
+  </div>
+  <div class="bottom"></div>
+</body>
 </html>
