@@ -1,6 +1,6 @@
 @import '../jeet/index';
 
-/*@include edit();*/
+// @include edit();
 
 @keyframes fadein {
     from { opacity: 0; }
@@ -53,6 +53,14 @@ $textSize: 12px;
 $textLineHeight: 2;
 
 $break-phone: "only screen and (max-width : 600px)";
+
+/* Media Queries */
+
+@media #{$break-phone} {
+  .content {
+    @include stack();
+  }
+}
 
 /* Global Styles */
 
@@ -122,13 +130,9 @@ a {
 }
 
 .content {
+
   article {
-    @include col(1/2);
-
     .image {
-      width: 1500px;
-      height: 1200px;
-
       img {
         width: 100%;
         height: 100%;
@@ -149,6 +153,28 @@ a {
     .text {
       margin-top: $textMargin;
       margin-bottom: $textMargin;
+      color: $grey;
+      font-size: $textSize;
+      line-height: $textLineHeight;
+    }
+  }
+}
+
+.main {
+  @extend .content;
+  article {
+    @include col(1/2);
+  }
+}
+
+.works {
+  @extend .content;
+  article {
+    @include col(1/3);
+
+    .text {
+      margin-top: $textMargin / 2;
+      margin-bottom: $textMargin / 2;
       color: $grey;
       font-size: $textSize;
       line-height: $textLineHeight;
