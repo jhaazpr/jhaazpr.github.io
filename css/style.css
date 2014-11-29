@@ -216,10 +216,10 @@ a {
 
 .container {
   height: 100%;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-bottom: 150px;
-  margin-top: 100px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10%;
+  margin-top: 5%;
   -webkit-animation: fadein 1.5s;
   /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.5s;

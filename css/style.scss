@@ -42,7 +42,7 @@
 /* Variables */
 
 $topHeight: 100px;
-$baseContainerMargin: 150px;
+$baseContainerMargin: 10%;
 $titleMargin: 20px;
 $textMargin: 80px;
 
@@ -125,7 +125,7 @@ a {
   margin-left: $baseContainerMargin;
   margin-right: $baseContainerMargin;
   margin-bottom: $baseContainerMargin;
-  margin-top: $baseContainerMargin / 1.5;
+  margin-top: $baseContainerMargin / 2;
   @include fade-in();
 }
 
