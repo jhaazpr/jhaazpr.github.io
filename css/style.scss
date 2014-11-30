@@ -81,6 +81,7 @@ body {
   margin: 0px;
   height: 100%;
   width: 100%;
+  display: none;
 }
 
 strong {
@@ -133,29 +134,40 @@ a {
 
   article {
     .image {
+
       img {
         width: 100%;
         height: 100%;
         overflow: hidden;
         box-shadow: 0px 0px 10px transparent;
         transition: box-shadow 0.25s ease-out;
-
         &:hover {
           box-shadow: 0px 0px 10px $grey;
         }
       }
+
+      a:hover {
+        // Override link hover underlining
+        border-bottom: 1px solid transparent;
+      }
     }
+
     .title {
       margin-top: $titleMargin;
       margin-bottom: $titleMargin;
       font-weight: 800;
     }
+
     .text {
       margin-top: $textMargin;
       margin-bottom: $textMargin;
       color: $grey;
       font-size: $textSize;
       line-height: $textLineHeight;
+
+      a {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -170,7 +182,7 @@ a {
 .works {
   @extend .content;
   article {
-    @include col(1/3);
+    @include col(1/3, $cycle: 3);
 
     .text {
       margin-top: $textMargin / 2;
