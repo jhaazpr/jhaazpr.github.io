@@ -163,16 +163,16 @@
 /* Variables */
 /* Media Queries */
 @media only screen and (max-width: 600px) {
-  .content, .main, .works {
+  .content, .main, .work {
     display: block;
     clear: both;
     float: none;
     width: 100%;
     margin-left: auto;
     margin-right: auto; }
-    .content:first-child, .main:first-child, .works:first-child {
+    .content:first-child, .main:first-child, .work:first-child {
       margin-left: auto; }
-    .content:last-child, .main:last-child, .works:last-child {
+    .content:last-child, .main:last-child, .work:last-child {
       margin-right: auto; } }
 /* Global Styles */
 * {
@@ -186,8 +186,7 @@
 body {
   margin: 0px;
   height: 100%;
-  width: 100%;
-  display: none; }
+  width: 100%; }
 
 strong {
   font-weight: 800;
@@ -197,9 +196,11 @@ a {
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid transparent;
-  transition: border-bottom 0.25s ease-out; }
+  transition: border-bottom 0.25s ease-out;
+  transition: color 0.25s ease-out; }
   a:hover {
-    border-bottom: 1px solid #000000; }
+    border-bottom: 1px solid #000000;
+    color: #000000; }
 
 /* Main styles */
 .top {
@@ -231,27 +232,27 @@ a {
   /* Opera < 12.1 */
   animation: fadein 1.5s; }
 
-.content article .image img, .main article .image img, .works article .image img {
+.content article .image img, .main article .image img, .work article .image img, .content article .work .subimage img, .main article .work .subimage img, .work article .subimage img {
   width: 100%;
   height: 100%;
   overflow: hidden;
   box-shadow: 0px 0px 10px transparent;
   transition: box-shadow 0.25s ease-out; }
-  .content article .image img:hover, .main article .image img:hover, .works article .image img:hover {
+  .content article .image img:hover, .main article .image img:hover, .work article .image img:hover, .content article .work .subimage img:hover, .main article .work .subimage img:hover, .work article .subimage img:hover {
     box-shadow: 0px 0px 10px #7e7e7e; }
-.content article .image a:hover, .main article .image a:hover, .works article .image a:hover {
+.content article .image a:hover, .main article .image a:hover, .work article .image a:hover, .content article .work .subimage a:hover, .main article .work .subimage a:hover, .work article .subimage a:hover {
   border-bottom: 1px solid transparent; }
-.content article .title, .main article .title, .works article .title {
+.content article .title, .main article .title, .work article .title {
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: 800; }
-.content article .text, .main article .text, .works article .text {
+.content article .text, .main article .text, .work article .text {
   margin-top: 80px;
   margin-bottom: 80px;
   color: #7e7e7e;
   font-size: 12px;
   line-height: 2; }
-  .content article .text a, .main article .text a, .works article .text a {
+  .content article .text a, .main article .text a, .work article .text a {
     cursor: pointer; }
 
 .main article {
@@ -294,6 +295,22 @@ a {
     color: #7e7e7e;
     font-size: 12px;
     line-height: 2; }
+
+.work .subimage {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%; }
+  .work .subimage:before, .work .subimage:after {
+    content: '';
+    display: table; }
+  .work .subimage:after {
+    clear: both; }
+  .work .subimage:last-child {
+    margin-right: 0%; }
 
 .bottom {
   height: 100px;
