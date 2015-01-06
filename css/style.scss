@@ -195,10 +195,11 @@ a {
 }
 
 .work {
-  @extend .content;
+  // @extend .content;
+
   .subimage {
-    @extend .image;
-    @include col(1/2);
+    // @extend .image;
+    // @include col(1/2);
   }
 }
 
