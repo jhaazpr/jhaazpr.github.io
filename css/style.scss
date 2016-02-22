@@ -129,7 +129,7 @@ a {
   margin-left: $baseContainerMargin;
   margin-right: $baseContainerMargin;
   margin-bottom: $baseContainerMargin;
-  margin-top: $baseContainerMargin / 2;
+  margin-top: $baseContainerMargin / 4;
   @include fade-in();
 }
 
