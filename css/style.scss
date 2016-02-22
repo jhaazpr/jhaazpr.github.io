@@ -46,6 +46,8 @@ $baseContainerMargin: 15%;
 $titleMargin: 20px;
 $textMargin: 80px;
 
+$workWidth: 720px;
+
 $grey: #7e7e7e;
 $black: #000000;
 
@@ -65,14 +67,14 @@ $break-phone: "only screen and (max-width : 600px)";
 /* Global Styles */
 
 * {
-  font-family: 'Source Code Pro', 'Helvatica Neue', sans-serif;
+  font-family: 'Source Code Pro', 'Helvetica Neue', sans-serif;
   margin: 0px;
 }
 
 html {
   @media #{$break-phone} {
     article {
-      @stack();
+      @include stack();
     }
   }
 }
@@ -195,16 +197,43 @@ a {
 }
 
 .work {
-  // @extend .content;
+  @extend .content;
 
-  .subimage {
-    // @extend .image;
-    // @include col(1/2);
+  // @include col(2/3);
+  @include center(720px);
+
+  article {
+
+    .text {
+      margin-top: ($textMargin / 4);
+      margin-bottom: ($textMargin / 4);
+    }
+
+    .title {
+      font-size: $textSize * 4;
+      margin-bottom: 0px;
+    }
+
+    .tagline {
+      @extend .text;
+      margin-top: 0;
+      margin-bottom: $textMargin / 2;
+    }
+
+    .header {
+      font-size: $textSize * 1.5;
+      font-weight: bold;
+    }
+
+    .subimage {
+      @extend .image;
+      margin-top: $textMargin / 4;
+    }
   }
 }
 
 .bottom {
   height: $topHeight;
   width: 100%;
-  bottom: 0px;  
+  bottom: 0px;
 }
