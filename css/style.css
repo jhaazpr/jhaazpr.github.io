@@ -239,8 +239,8 @@ a {
   height: 100%;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 15%;
-  margin-top: 3.75%;
+  margin-bottom: 3.75%;
+  margin-top: 0;
   -webkit-animation: fadein 1.5s;
   /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1.5s;
@@ -269,7 +269,7 @@ a {
   margin-top: 80px;
   margin-bottom: 80px;
   color: #7e7e7e;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 2; }
   .content article .text a, .main article .text a, .work article .text a, .work article .tagline a {
     cursor: pointer; }
@@ -312,7 +312,7 @@ a {
     margin-top: 40px;
     margin-bottom: 40px;
     color: #7e7e7e;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 2; }
 
 .work {
@@ -333,17 +333,32 @@ a {
   .work article .text, .work article .tagline {
     margin-top: 20px;
     margin-bottom: 20px; }
+    .work article .text a, .work article .tagline a {
+      text-decoration: none;
+      color: black;
+      border-bottom: 1px solid transparent; }
+      .work article .text a:hover, .work article .tagline a:hover {
+        border-bottom: 1px solid black;
+        color: black; }
   .work article .title {
-    font-size: 48px;
-    margin-bottom: 0px; }
+    font-size: 56px;
+    margin-bottom: 5px; }
   .work article .tagline {
     margin-top: 0;
+    margin-bottom: 5px; }
+  .work article nav ul {
+    padding-left: 0;
     margin-bottom: 40px; }
+  .work article nav li {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    display: inline-block; }
   .work article .header {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: bold; }
   .work article .subimage {
-    margin-top: 20px; }
+    margin-top: 26.66667px; }
 
 .bottom {
   height: 100px;

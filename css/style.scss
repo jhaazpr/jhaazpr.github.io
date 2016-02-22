@@ -51,7 +51,7 @@ $workWidth: 720px;
 $grey: #7e7e7e;
 $black: #000000;
 
-$textSize: 12px;
+$textSize: 14px;
 $textLineHeight: 2;
 
 $break-phone: "only screen and (max-width : 600px)";
@@ -128,8 +128,8 @@ a {
   height: 100%;
   margin-left: $baseContainerMargin;
   margin-right: $baseContainerMargin;
-  margin-bottom: $baseContainerMargin;
-  margin-top: $baseContainerMargin / 4;
+  margin-bottom: $baseContainerMargin / 4;
+  margin-top: 0;
   @include fade-in();
 }
 
@@ -207,17 +207,42 @@ a {
     .text {
       margin-top: ($textMargin / 4);
       margin-bottom: ($textMargin / 4);
+
+      a {
+        text-decoration: none;
+        color: $black;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-bottom: 1px solid $black;
+          color: $black;
+        }
+      }
+
     }
 
     .title {
       font-size: $textSize * 4;
-      margin-bottom: 0px;
+      margin-bottom: $textMargin / 16;
     }
 
     .tagline {
       @extend .text;
       margin-top: 0;
-      margin-bottom: $textMargin / 2;
+      margin-bottom: $textMargin / 16;
+    }
+
+    nav {
+      ul {
+        padding-left: 0;
+        margin-bottom: $textMargin / 2;
+      }
+      li {
+        font-size: 12px;
+        font-style: italic;
+        font-weight: bold;
+        display: inline-block;
+      }
     }
 
     .header {
@@ -227,7 +252,7 @@ a {
 
     .subimage {
       @extend .image;
-      margin-top: $textMargin / 4;
+      margin-top: $textMargin / 3;
     }
   }
 }
