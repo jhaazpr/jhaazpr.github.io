@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="assets/favicon.png">
+<title>Jasper O'Leary</title>
+<link href="css/style.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+  <div class="top">
+  <div class="logo">Jasper O'Leary</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="work">
+      <article class="project">
+        <section class="image"><img src="assets/symbiot/symbiot_diagram.png"></section>
+        <section class="title">SymbIoT</section>
+        <section class="tagline">
+          Designing spatial interactions for the Internet of Things.
+        </section>
+        <nav>
+          <ul>
+            <li><a href="#">Front-End,</a></li>
+            <li><a href="#">UI,</a></li>
+            <li><a href="#">Firmware,</a></li>
+            <li><a href="#">HCI</a></li>
+          </ul>
+        </nav>
+        <section class="header">
+          Overview
+        </section>
+        <section class="text">
+          SymbIoT is a long-term research project about giving end users the ability to program
+          environments filled networked objects in the Internet of Things (IoT). It consists of
+          programmable network nodes, an HTTP API for controlling the nodes, and a user interface
+          for graphically programming the nodes with respect to the user's environment. The
+          primary focus of the SymbIoT architecture is the user interface.
+          <br/><br/>
+          I was supported by a <a href="http://surf.berkeley.edu/surf-fellows/detail/3482">Summer Undergraduate Research Fellowship (SURF) from UC Berkeley</a> while working on this project.
+        </section>
+        <section class="header">
+          Background and Research Question
+        </section>
+        <section class="text">
+          With the rapid increase of network-connected devices and things, users will need a way of programming them that scales well.
+          Currently, approaches to programming the IoT are object-centric--we are used to programming individual devices rather
+          than the overall interaction between devices. SymbIoT experiments with new ways that allow users to focus on designing
+          coarse-grain setups of IoT objects, rather than on fine-grain device configurations.
+        </section>
+        <section class="header">
+          First Iteration: Hardware and Command Line Interface
+        </section>
+        <section class="subimage"><img src="assets/symbiot/node.png"></section>
+        <section class="text">
+          First, I built the hardware nodes that receive commands from a central controller.
+          Each node is an Arduino Uno microcontroller connected to both a I2C BlinkM programmable LED and a
+          Nordic RF24+ radio chip. In C, I programmed the Arduino to poll the radio,
+          transmit and process bytes, and illuminate the BlinkM led with various brightness
+          and color according to a low-level domain-specifc language. For example, to set node 2
+          to 100% brightess, from the central controller, one would enter:
+
+          >>> s2,100
+        </section>
+        <section class="header">
+          Second Iteration: Web API
+        </section>
+        <section class="text">
+          I wrote an API that translates HTTP requests into firmware-level commands
+          for the nodes. I used Express.js running on a Node.js server, integrated
+          with MongoDB for keeping system state. This step was important to be able
+          to control the nodes from a web browser.
+          <section class="subimage"><img src="assets/symbiot/setup.png"></section>
+          More explanation might go here.
+        </section>
+        <section class="header">
+          Third Iteration: User Interface
+        </section>
+        <section class="subimage"><img src="assets/symbiot/sketch.png"></section>
+        <section class="text">
+          Designing the software user interface was the principle challenge of the project, answering
+          the fundamental question: how should people program IoT object-rich environments, a task
+          that has never had a UI designed for it before?
+        </section>
+        <section class="subimage"><img src="assets/symbiot/ui_screen.png"></section>
+        <section class="text">
+          To explore this question, I first conducted a pilot study to test the domain of real-time direct
+          manipulation user interfaces. Two trends I noticed were:
+        </section>
+        <section class="subimage"><img src="assets/symbiot/replication_task.png"></section>
+        <section class="text">
+          I've mocked up new UIs to test, but these plans are currently on hold.
+        </section>
+      </article>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</body>
+</html>

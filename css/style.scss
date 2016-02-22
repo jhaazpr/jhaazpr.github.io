@@ -187,7 +187,7 @@ a {
     @include col(1/3, $cycle: 3);
 
     .text {
-      margin-top: $textMargin / 2;
+      margin-top: 0;
       margin-bottom: $textMargin / 2;
       color: $grey;
       font-size: $textSize;

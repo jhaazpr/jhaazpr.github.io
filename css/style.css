@@ -309,7 +309,7 @@ a {
   .works article:nth-of-type(3n + 1) {
     clear: both; }
   .works article .text, .works .work article .tagline, .work .works article .tagline {
-    margin-top: 40px;
+    margin-top: 0;
     margin-bottom: 40px;
     color: #7e7e7e;
     font-size: 14px;
