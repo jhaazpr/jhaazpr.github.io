@@ -257,8 +257,6 @@ a {
   overflow: hidden;
   box-shadow: 0px 0px 10px transparent;
   transition: box-shadow 0.25s ease-out; }
-  .content article .image img:hover, .main article .image img:hover, .work article .image img:hover, .work article .subimage img:hover {
-    box-shadow: 0px 0px 10px #7e7e7e; }
 .content article .image a:hover, .main article .image a:hover, .work article .image a:hover, .work article .subimage a:hover {
   border-bottom: 1px solid transparent; }
 .content article .title, .main article .title, .work article .title {
@@ -308,6 +306,8 @@ a {
     float: right; }
   .works article:nth-of-type(3n + 1) {
     clear: both; }
+  .works article img:hover {
+    box-shadow: 0px 0px 10px #7e7e7e; }
   .works article .text, .works .work article .tagline, .work .works article .tagline {
     margin-top: 0;
     margin-bottom: 40px;
