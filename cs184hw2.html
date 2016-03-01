@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="assets/favicon.png">
+<title>Jasper O'Leary</title>
+<link href="css/style.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="top">
+  <div class="logo">Jasper O'Leary</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="logo"></div>
+  </div>
+  <div class="container">
+    <div class="work">
+      <article class="project">
+        <section class="image"><img src="./assets/cs184hw2/cover.png"></section>
+        <section class="title">HW 2: GeoMenagerie</section>
+        <section class="tagline">
+          Second homework for UC Berkeley's CS184: Introduction to Computer Graphics.
+        </section>
+        <nav>
+          <ul>
+            <li><a href="#">Jasper O'Leary</a></li>
+          </ul>
+        </nav>
+        <section class="header">
+          Overview
+        </section>
+        <section class="text">
+          This assignment taught me the basics of using meshes in computer graphics, as well as some basic shading.
+          The first step in working with meshes is generating them from B&eacute;zier surfaces via triangular approximation.
+          Then, I gradually implemented the Loop subdivision algorithm which increases the samples in the mesh using subdivision alone.
+          Finally, I added some shaders using the OpenGL shading language and applied shading to some meshes, including one I designed myself.
+        </section>
+        <section class="header">
+          Part 1: Fun with B&eacute;zier Surfaces
+        </section>
+        <section class="text">
+          In this part, I triangulated B&eacute;zier surfaces to create the meshes shown on the screen.
+          The way this works is that we start with a B&eacute;zier surface that represents the smooth surface of, for example a teapot.
+          Each point on the 2D Be&eacute;zier surface can be represented as a tensor product of two B&eacute;zier curves.
+          I sampled this tensor product at 64 points across a grid, and drew triangle faces with samples serving as vertices of these triangles.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/1a.png"></section>
+        <section class="text">
+          The CS184 GSIs wrote a nice interface allowing us to click on components of the mesh and see the memory addresses.
+          The mesh element information box is at the upper right of the following screen:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/1b.png"></section>
+
+        <section class="header">
+          Part 2: Average normals for half-edge meshes
+        </section>
+        <section class="text">
+          The mesh resulting from the triangulation looks a little boxy.
+          If we want to go for a smoother look, we can average the normal vectors of each face relative to those of the surounding faces.
+          After averaging the normals, the surfaces loses its boxy edges and looks smoother:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/2a.png"></section>
+        <section class="text">
+          Here is the same process with the mesh information removed and simple shading applied:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/2b.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/2c.png"></section>
+
+        <section class="header">
+          Part 3: Edge Flip
+        </section>
+        <section class="text">
+          Having generated the mesh and having smoothed its appearance, I now wrote two operations to alter mesh elements.
+          The first of these two is flipping an edge, which prove essential later for upsampling the mesh.
+          The mesh is written with the Halfedge data structure, named for the halfedge elements which "bind" the entire mesh together.
+          An example of a halfedge is shown in part 1 -- it's the little half-arrow highlighted on the screen.
+          <br/><br/>
+          To flip the edge, I needed to create a ton of pointers to all of the potentially affected edges, halfedges, and vertices.
+          Then, I swapped all of them to their new positions, which was quite error prone.
+          Missing pointers here meant the edge would disappear, or the program would crash due to segmentation faults.
+          After some debugging, I implemented the seemingly simple operation demonstrated below:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/3a.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/3b.png"></section>
+
+        <section class="header">
+          Part 4: Edge Split
+        </section>
+        <section class="text">
+          The next operation for upsampling is splitting an edge, which means inserting a vertex at the midpoint along with a perpenticular bisector at the vertex.
+          Implementing this process was similar to above, but much more error prone because I needed to create several new edges and faces.
+          I encountered two particularly tricky bugs.
+          The first was setting just one halfedge incorrectly, which caused to edges to infinite loop when I clicked one of the child edges.
+          The next was not caught until later in part 5, where the new halfedges in the perpendicular bisector pointed the wrong way.
+          For now, the operation looks as follows:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/4a.png"></section>
+        <section class="text">
+          Note that flipping the altitude of a face that results from a split essentially causes two edges to pile on top of one another:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/4b.png"></section>
+        <section class="text">
+          Here's what the mesh looks like after several splits and flips:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/4c.png"></section>
+
+        <section class="header">
+          Part 5: Upsampling via Loop Subdivision
+        </section>
+        <section class="text">
+          Having implemented flipping and splitting edges, we can know upample the mesh, which means introducing more edges and vertices while preserving the geometry of the mesh.
+          This causes a "higher resolution" mesh, where we are more closely approximating the original B&eacute;zier surface.
+          This is more powerful than simply smoothing the face normals as in part 2 as now we have more "information" about the true geometry that the mesh is approximating.
+          I implemented the Loop subdivision algorithm, the affects of which are shown below, starting with zero iterations:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5a.png"></section>
+        <section class="text">
+          One iteration:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5b.png"></section>
+        <section class="text">
+          Two iterations:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5c.png"></section>
+        <section class="text">
+          Three iterations:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5d.png"></section>
+        <section class="text">
+          Four iterations.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5e.png"></section>
+        <section class="text">
+          Note that the framerates, indicated at the bottom left of each screens, have been dropping with each iteration of the subdivision algorithm.
+          This is because with each iteration, we have many more edges and vertices to render.
+          <br/><br/>
+          Now we apply Loop subsampling to a cube shown above with few initial vertices and edges.
+          Because of this fact, unlike the previous example, Loop subsampling will modify the geometry of the mesh, changing it from a cube to a sphere-like object.
+          <br/><br/>
+          One iteration:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5f.png"></section>
+        <section class="text">
+          Two iterations:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5g.png"></section>
+        <section class="text">
+          After several iterations, with shading applied:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5h.png"></section>
+        <section class="text">
+          Implementing Loop subdivision was quite bug prone.
+          The screenshots below show the consequences of not setting a halfedge correctly when splitting an edge, which went unseen after initially implementing edge splitting.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/5_bug_1.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/5_bug_2.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/5_bug_3.png"></section>
+
+        <br/><br/>
+        <section class="header">
+          Part 6: Fun with Shaders
+        </section>
+        <section class="text">
+          In this part of the assignment, I implemented Phong shading and environment mapping using OpenGL shading language (GLSL).
+          For both shaders, the basic idea is for each pixel on the mesh, we calculate how lit-up each pixel should be given the lighting vector(s) and the viewing angle relative to that pixel.
+          For Phong shading, the total radiance equals ambient lighting, plus diffuse lighting, plus specular highlights.
+          <br/><br/>
+          We start with a simple shader (diffuse from eye):
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6b.png"></section>
+        <section class="text">
+          Turning on Phong shading with blue as shadow and magenta as light, we get the meshes below:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6c.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/6d.png"></section>
+        <section class="text">
+          If we average surface normals, the shading looks a little smoother and more realistic:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6e.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/6f.png"></section>
+        <section class="text">
+          Here is Phong shading applied to our favorite teapot:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6g.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/6h.png"></section>
+        <section class="text">
+          This is the specular highlight component of the Phong shading equation, isolated from ambient and diffuse lighting:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6i2.png"></section>
+        <section class="text">
+          On the other hand environment mapping treats the surface of the mesh as a highly reflective surface that is reflecting a surrounding an environment.
+          Thus, for each pixel, I calculated for each pixel the vector representing a reflective ray out towards the enviroment.
+          I then mapped these vectors into spherical coordinates, and these coordinates represent the location of a a corresponding texel in the environment texture map.
+          Those texel values then shade the pixel appropriately.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6i.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/6j.png"></section>
+        <section class="text">
+          If we de-average the surface normals, the mesh resembles a disco ball, which is kind of neat.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/6k.png"></section>
+
+        <section class="header">
+          Part 7: Design your own mesh!
+        </section>
+        <section class="text">
+          Using the 3D modeling program Blender, I (painstakingly) designed an extremely simple humanoid mesh resembling an <em>inuksuk</em>, a cairn from the cultures of certain Native American tribes in Canada.
+          I added an isocahedron near its "head" for kicks, an to allude to the titan Atlas from Greek mythology.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/7a.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/vancouver_stone.jpg"></section>
+        <section class="text">
+          This <em>inuksuk</em> was also used as the symbol of the 2010 Winter Olympics in Vancouver, Canada.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/vancouver_symbol.png"></section>
+        <section class="text">
+          Applying Phong shading to the <em>inuksuk</em>:
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/7b.png"></section>
+        <section class="subimage"><img src="./assets/cs184hw2/7c.png"></section>
+        <section class="text">
+          Applying environment shading revealed an issue with the mesh ....
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/7d.png"></section>
+        <section class="text">
+          Applying one iteration of Loop subdivision, the issue with the shading disappears, but now we notice something else odd: the "limbs" separate and part of the shoulder seems to melt.
+          This happens because I used the extrusion operation in Blender, which, for some odd reason, creates internal faces, vertices, and edges between the extruding object and the object from which it was extruded.
+          So, when the subdivision algorithm is applied, these seperate meshes "grow" apart.
+          The same goes for the shoulder, where the right side in the image was created from extrusion.
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/7e.png"></section>
+        <section class="text">
+          Giant Atlassian <em>inuksuk</em> says "hello world."
+        </section>
+        <section class="subimage"><img src="./assets/cs184hw2/7f.png"></section>
+      </article>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</body>
+</html>
