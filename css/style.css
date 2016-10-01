@@ -170,6 +170,12 @@
   to {
     opacity: 1; } }
 
+/* Fonts */
+@font-face {
+  font-family: Neue Haas Unica Pro;
+  font-weight: thin;
+  src: url("NeueHaasUnicaPro-Thin.otf"); }
+
 /* Variables */
 /* Media Queries */
 @media only screen and (max-width: 600px) {
@@ -186,7 +192,7 @@
       margin-right: auto; } }
 /* Global Styles */
 * {
-  font-family: 'Source Code Pro', 'Helvetica Neue', sans-serif;
+  font-family: 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
   margin: 0px; }
 
 @media only screen and (max-width: 600px) {
@@ -226,11 +232,11 @@ a {
   height: 100px;
   width: 100%; }
   .top nav li {
-    font-size: 12px;
+    font-size: 20px;
     display: inline-block; }
   .top .logo {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 36px;
     margin-top: 40px;
     margin-left: 40px;
     margin-bottom: 5px; }
@@ -267,8 +273,8 @@ a {
   margin-top: 80px;
   margin-bottom: 80px;
   color: #7e7e7e;
-  font-size: 14px;
-  line-height: 2; }
+  font-size: 20px;
+  line-height: 1.8; }
   .content article .text a, .main article .text a, .work article .text a, .work article .tagline a {
     cursor: pointer; }
 
@@ -312,8 +318,8 @@ a {
     margin-top: 0;
     margin-bottom: 40px;
     color: #7e7e7e;
-    font-size: 14px;
-    line-height: 2; }
+    font-size: 20px;
+    line-height: 1.8; }
 
 .work {
   *zoom: 1;
@@ -341,7 +347,7 @@ a {
         border-bottom: 1px solid black;
         color: black; }
   .work article .title {
-    font-size: 56px;
+    font-size: 80px;
     margin-bottom: 5px; }
   .work article .tagline {
     margin-top: 0;
@@ -355,7 +361,7 @@ a {
     font-weight: bold;
     display: inline-block; }
   .work article .header {
-    font-size: 21px;
+    font-size: 30px;
     font-weight: bold; }
   .work article .subimage {
     margin-top: 26.66667px; }

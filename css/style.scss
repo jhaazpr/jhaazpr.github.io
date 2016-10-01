@@ -39,6 +39,9 @@
           animation: fadein 1.5s;
 }
 
+/* Fonts */
+@font-face { font-family: Neue Haas Unica Pro; font-weight: thin; src: url('NeueHaasUnicaPro-Thin.otf');}
+
 /* Variables */
 
 $topHeight: 100px;
@@ -51,8 +54,9 @@ $workWidth: 720px;
 $grey: #7e7e7e;
 $black: #000000;
 
-$textSize: 14px;
-$textLineHeight: 2;
+$textSize: 20px;
+$textLineHeight: 1.8;
+$headTextSize: 36px;
 
 $break-phone: "only screen and (max-width : 600px)";
 
@@ -67,7 +71,7 @@ $break-phone: "only screen and (max-width : 600px)";
 /* Global Styles */
 
 * {
-  font-family: 'Source Code Pro', 'Helvetica Neue', sans-serif;
+  font-family: 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
   margin: 0px;
 }
 
@@ -111,13 +115,13 @@ a {
   width: 100%;
 
   nav li {
-    font-size: 12px;
+    font-size: $textSize;
     display: inline-block;
   }
 
   .logo {
     font-weight: 800;
-    font-size: 20px;
+    font-size: $headTextSize;
     margin-top: 40px;
     margin-left: 40px;
     margin-bottom: 5px;
