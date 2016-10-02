@@ -265,8 +265,6 @@ a {
   overflow: hidden;
   box-shadow: 0px 0px 10px transparent;
   transition: box-shadow 0.25s ease-out; }
-.content article .image .transparent img, .work article .image .transparent img, .work article .subimage .transparent img, .work article .line-image .transparent img, .work article .line-image-2 .transparent img {
-  opacity: 0.8; }
 .content article .image a:hover, .work article .image a:hover, .work article .subimage a:hover, .work article .line-image a:hover, .work article .line-image-2 a:hover {
   border-bottom: 1px solid transparent; }
 .content article .title, .work article .title {
@@ -442,6 +440,11 @@ a {
       clear: both; }
     .work article .line-image-2:last-child {
       margin-right: 0%; }
+
+.transparent {
+  opacity: 0.8;
+  margin-top: 20px;
+  margin-bottom: 20px; }
 
 .bottom {
   height: 100px;

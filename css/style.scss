@@ -155,10 +155,6 @@ a {
         transition: box-shadow 0.25s ease-out;
       }
 
-      .transparent img {
-        opacity: 0.8;
-      }
-
       a:hover {
         // Override link hover underlining
         border-bottom: 1px solid transparent;
@@ -320,6 +316,12 @@ a {
       margin-right: -0px
     }
   }
+}
+
+.transparent {
+  opacity: 0.8;
+  margin-top: $baseContainerMargin * 0.5;
+  margin-bottom: $baseContainerMargin * 0.5;
 }
 
 .bottom {
