@@ -41,6 +41,7 @@
 
 /* Fonts */
 @font-face { font-family: Neue Haas Unica Pro; font-weight: thin; src: url('NeueHaasUnicaPro-Thin.otf');}
+@import 'https://fonts.googleapis.com/css?family=Fira+Sans:300,700';
 
 /* Variables */
 
@@ -51,11 +52,11 @@ $textMargin: 80px;
 
 $workWidth: 720px;
 
-$grey: #444444;
+$grey: #666666;
 $black: #000000;
 
-$textSize: 16px;
-$textLineHeight: 1.8;
+$textSize: 14px;
+$textLineHeight: 2.0;
 $headTextSize: 30px;
 
 $break-phone: "only screen and (max-width : 600px)";
@@ -71,7 +72,7 @@ $break-phone: "only screen and (max-width : 600px)";
 /* Global Styles */
 
 * {
-  font-family: 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
+  font-family: 'Fira Sans', 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
   margin: 0px;
 }
 
@@ -168,6 +169,7 @@ a {
       color: $grey;
       font-size: $textSize;
       line-height: $textLineHeight;
+      font-weight: 100;
 
       a {
         cursor: pointer;

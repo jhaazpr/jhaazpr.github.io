@@ -131,6 +131,7 @@
 /**
  * Apply a clearfix to an element.
  */
+@import 'https://fonts.googleapis.com/css?family=Fira+Sans:300,700';
 @keyframes fadein {
   from {
     opacity: 0; }
@@ -192,7 +193,7 @@
       margin-right: auto; } }
 /* Global Styles */
 * {
-  font-family: 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
+  font-family: 'Fira Sans', 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
   margin: 0px; }
 
 @media only screen and (max-width: 600px) {
@@ -232,7 +233,7 @@ a {
   height: 100px;
   width: 100%; }
   .top nav li {
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block; }
   .top .logo {
     font-weight: 800;
@@ -272,9 +273,10 @@ a {
 .content article .text, .main article .text, .work article .text, .work article .tagline {
   margin-top: 80px;
   margin-bottom: 80px;
-  color: #444444;
-  font-size: 16px;
-  line-height: 1.8; }
+  color: #666666;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 100; }
   .content article .text a, .main article .text a, .work article .text a, .work article .tagline a {
     cursor: pointer; }
 
@@ -313,13 +315,13 @@ a {
   .works article:nth-of-type(3n + 1) {
     clear: both; }
   .works article img:hover {
-    box-shadow: 0px 0px 10px #444444; }
+    box-shadow: 0px 0px 10px #666666; }
   .works article .text, .works .work article .tagline, .work .works article .tagline {
     margin-top: 0;
     margin-bottom: 40px;
-    color: #444444;
-    font-size: 16px;
-    line-height: 1.8; }
+    color: #666666;
+    font-size: 14px;
+    line-height: 2; }
 
 .work {
   *zoom: 1;
@@ -347,7 +349,7 @@ a {
         border-bottom: 1px solid black;
         color: black; }
   .work article .title {
-    font-size: 64px;
+    font-size: 56px;
     margin-bottom: 5px; }
   .work article .tagline {
     margin-top: 0;
@@ -360,7 +362,7 @@ a {
     font-weight: bold;
     display: inline-block; }
   .work article .header {
-    font-size: 24px;
+    font-size: 21px;
     font-weight: bold; }
   .work article .subimage {
     margin-top: 26.66667px; }
