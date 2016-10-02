@@ -51,12 +51,12 @@ $textMargin: 80px;
 
 $workWidth: 720px;
 
-$grey: #7e7e7e;
+$grey: #444444;
 $black: #000000;
 
-$textSize: 20px;
+$textSize: 16px;
 $textLineHeight: 1.8;
-$headTextSize: 36px;
+$headTextSize: 30px;
 
 $break-phone: "only screen and (max-width : 600px)";
 
@@ -236,13 +236,12 @@ a {
     .tagline {
       @extend .text;
       margin-top: 0;
-      margin-bottom: $textMargin / 16;
+      margin-bottom: $textMargin / 2;
     }
 
     nav {
       ul {
         padding-left: 0;
-        margin-bottom: $textMargin / 2;
       }
       li {
         font-size: 12px;
