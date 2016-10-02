@@ -175,6 +175,20 @@ a {
         cursor: pointer;
       }
     }
+
+    .project-tab {
+      @include col(1);
+
+      .title {
+        margin-bottom: 0px;
+      }
+
+      .text {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+    }
   }
 }
 

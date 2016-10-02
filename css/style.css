@@ -279,6 +279,27 @@ a {
   font-weight: 100; }
   .content article .text a, .main article .text a, .work article .text a, .work article .tagline a {
     cursor: pointer; }
+.content article .project-tab, .main article .project-tab, .work article .project-tab {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%; }
+  .content article .project-tab:before, .main article .project-tab:before, .work article .project-tab:before, .content article .project-tab:after, .main article .project-tab:after, .work article .project-tab:after {
+    content: '';
+    display: table; }
+  .content article .project-tab:after, .main article .project-tab:after, .work article .project-tab:after {
+    clear: both; }
+  .content article .project-tab:last-child, .main article .project-tab:last-child, .work article .project-tab:last-child {
+    margin-right: 0%; }
+  .content article .project-tab .title, .main article .project-tab .title, .work article .project-tab .title {
+    margin-bottom: 0px; }
+  .content article .project-tab .text, .main article .project-tab .text, .work article .project-tab .text, .work article .project-tab .tagline {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 12px; }
 
 .main article {
   *zoom: 1;
