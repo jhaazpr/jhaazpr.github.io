@@ -17,17 +17,16 @@
   <div class="container">
     <div class="work">
       <article class="project">
-        <section class="image"><img src="./images/ply.png"></section>
+        <section class="image"><img src="assets/meshedit_plus_plus/ply.png"></section>
         <section class="title">Meshedit++</section>
         <section class="tagline">
           Interactive editor for the point cloud to simplified mesh pipeline.
+          <nav>
+            <ul>
+              <li>Team JAM: Jasper O'Leary, Annalise Hurst, Matthew Waliman</li>
+            </ul>
+          </nav>
         </section>
-        <nav>
-          <ul>
-            <li>Team JAM: Jasper O'Leary, Annalise Hurst, Matthew Waliman</li>
-          </ul>
-        </nav>
-
         <section class="header">
           Abstract
         </section>
@@ -66,7 +65,7 @@
           We extended Meshedit's functionality to load <strong>.ply</strong> file, which consist principally of a list
           of vertex points:
         </section>
-        <section class="subimage"><img src="./images/ply_screenshot.png"></section>
+        <section class="subimage"><img src="assets/meshedit_plus_plus/ply_screenshot.png"></section>
         <section class="text">
           To load points, we first parse the vertices from the .ply file and place each in a <strong>Vector3D</strong>
           object, which is simply an object with x, y, and z fields that supports vector operations such
@@ -102,14 +101,14 @@
           Here are two point cloud visualizations of the scanned side of a dragon statue, one with the viewer
           zoomed out and one zoomed in such that the points become clearly visible.
         </section>
-        <section class="subimage"><img src="./images/dragon_pc.png"></section>
-        <section class="subimage"><img src="./images/dragon_pc_zoom.png"></section>
+        <section class="subimage"><img src="assets/meshedit_plus_plus/dragon_pc.png"></section>
+        <section class="subimage"><img src="assets/meshedit_plus_plus/dragon_pc_zoom.png"></section>
         <section class="text">
           One advantage of point cloud visualization is that it allows for visualizing objects that would
           have a very high poly count as a mesh, and thus would be slow to load and render. Here is a point cloud
           rendering of the full "Happy Buddha" scan, containing 543,652 vertices.
         </section>
-        <section class="subimage"><img src="./images/buddha_pc_cross.png"></section>
+        <section class="subimage"><img src="assets/meshedit_plus_plus/buddha_pc_cross.png"></section>
 
 
         <section class="header">
@@ -159,7 +158,7 @@
                   return
             </code>
             </pre>
-          <section class="subimage"><img src="./images/bpa.png"></section>
+          <section class="subimage"><img src="assets/meshedit_plus_plus/bpa.png"></section>
 
           <section class="text">
           <p><strong>1. Ball Pivot</strong>
@@ -177,7 +176,7 @@
           </section>
           <section class="text">
           <p><strong>Sphere Center from 3 points and a radius</strong></p>
-          <section class="subimage"><img src="./images/sphere_center.png"></section>
+          <section class="subimage"><img src="assets/meshedit_plus_plus/sphere_center.png"></section>
           </section>
           <section class="text">
           <p>One of the most common problems in this algorithm is finding a the center of a sphere with radius rho from 3 points. Given any three points i, j and x, we can form a parallelogram. The center of the parallelogram (p0) lies on the same line as the 0, 1 or 2 sphere centers that exist for our points. To find the distance t1, t2 we need to travel on the line p, we use the Pythagorean theorem. </p>
@@ -208,11 +207,11 @@
             it reconstructs a crystalized bunny (note that environment mapping shading is applied):
           </section>
 
-          <section class="subimage"><img src="./images/bun_pc_lowres.png"></section>
-          <section class="line-image-2"><img src="./images/crystal1.png"></section>
-          <section class="line-image-2"><img src="./images/crystal2.png"></section>
-          <section class="line-image-2"><img src="./images/crystal3.png"></section>
-          <section class="line-image-2"><img src="./images/crystal4.png"></section>
+          <section class="subimage"><img src="assets/meshedit_plus_plus/bun_pc_lowres.png"></section>
+          <section class="line-image-2"><img src="assets/meshedit_plus_plus/crystal1.png"></section>
+          <section class="line-image-2"><img src="assets/meshedit_plus_plus/crystal2.png"></section>
+          <section class="line-image-2"><img src="assets/meshedit_plus_plus/crystal3.png"></section>
+          <section class="line-image-2"><img src="assets/meshedit_plus_plus/crystal4.png"></section>
 
           <section class="text">
           We could not implement all stages of the pipeline in the allotted time, but our future plan would be to correct the issues
@@ -220,8 +219,8 @@
           described in Bernardini et al. (they describe having vertex normals as a "mild assumption"). Below is a simpler point cloud
           that more clearly displays the extraneous triangles caused by starting the ball on the wrong side.
           </section>
-          <section class="line-image-2"><img src="./images/simple_pc.png"></section>
-          <section class="line-image-2"><img src="./images/simple_mesh.png"></section>
+          <section class="line-image-2"><img src="assets/meshedit_plus_plus/simple_pc.png"></section>
+          <section class="line-image-2"><img src="assets/meshedit_plus_plus/simple_mesh.png"></section>
 
           <section class="text">
           <strong>Simplifications:</strong>
@@ -237,7 +236,7 @@
         <section class="text">
           <p><strong>Collapse Edges:</strong>
             Most of the popular algorithms for simplifying meshes include iterative edge contraction. Therefore, to use these algorithms we have to implement the ability to collapse edges. To do so we have to remove the selected edge from the mesh, along with the faces, halfedges and vertex that will no longer be needed. While doing this we have to make sure that all of the remaining mesh features are correctly re-attached to each other. Here is a diagram of an edge collapse:
-            <section class="subimage"><img src="./images/collaps.png"></section>
+            <section class="subimage"><img src="assets/meshedit_plus_plus/collaps.png"></section>
             Im our implementation we first check to make sure the selected edge is not a boundary edge. We then check to make sure that there are no more than two connected neighboring vertices of v1, and v2. If there are more then two connections, collapsing the edges will cause the mesh to become non-manifold. Next, to avoid malloc and segmenation fault errors, we have to set the halfedge values of the edges, that are going to be remaining from the dark grey diamond that collapses(see figure above), to the halfedges on the outer side of the diamond, we have to set the halfedge valuse of the edges that are being removed to the halfedges on the inner side of the diamond, and we must set the halfedge values of the remaining connected neighboring vertices to the halfedges on the outer side of the diamond. Instead of creating a new vertex v we keep the vertex v1 and attached all of the halfedges that used to attach to v2 to v1. After they are all attached to v1, we close the gap by setting the twin values of the remaining half edges. Finally we delete all of the un-needed features and return v1.
       </section>
       <section class="text">
@@ -258,49 +257,49 @@
           <section class="text">
           Here is an edge collapse performed on a cube.
           </section>
-          <section class="line-image"><img src="./images/qe_cube_before.png"></section>
-          <section class="line-image"><img src="./images/qe_cube_during.png"></section>
-          <section class="line-image"><img src="./images/qe_cube_after.png"></section>
+          <section class="line-image"><img src="assets/meshedit_plus_plus/qe_cube_before.png"></section>
+          <section class="line-image"><img src="assets/meshedit_plus_plus/qe_cube_during.png"></section>
+          <section class="line-image"><img src="assets/meshedit_plus_plus/qe_cube_after.png"></section>
 
           <section class="text">
           <p><strong>Quadric Error:</strong>
             Now that we can collapse edges the question is which edges to collapse. We want to collapse the edge that will change the mesh the least. To find this edge we must develop some measure of change. Quadric error is one measure of cost and the algorithm for using this measure to simplify meashes was developed by Michael Garland and Paul Heckbert. This is the algorithm that we use in Meshedit++. The main idea for quadric error is calculating the distance from any point to a plane, and summing these distances for each vertex. For a plane point x, normal N, and point p, the equation for calculating the distance from p to the plane is given by:
           </section>
-            <section class="equation"><img src="./images/distance1.png"></section>
-            <section class="subimage"><img src="./images/PlaneNormalEquation.png"></section>
+            <section class="equation"><img src="assets/meshedit_plus_plus/distance1.png"></section>
+            <section class="subimage"><img src="assets/meshedit_plus_plus/PlaneNormalEquation.png"></section>
           <section class="text">
             In homogeneous coordinates this equation can be written as:
           </section>
-            <section class="equation"><img src="./images/distance2.png"></section>
+            <section class="equation"><img src="assets/meshedit_plus_plus/distance2.png"></section>
           <section class="text">
             Where u = (x,y,z,1) and v = (a,b,c,d). Homogeneous coordinates are a system of coordinates used in projective geometry, that can represent infinite points using finite coordinates. v v^T is an outer product of v with itself and is equal to K our quadric matrix. K is of the form:
           </section>
-            <section class="equation"><img src="./images/matrix.png"></section>
+            <section class="equation"><img src="assets/meshedit_plus_plus/matrix.png"></section>
           <section class="text">
             For each plane in the mesh we calculate this quadric matrix and store it.
             The quadric for a vertex is the sum of quadrics for the surrounding faces.
           </section>
-            <section class="equation"><img src="./images/VertexNormals.png"></section>
+            <section class="equation"><img src="assets/meshedit_plus_plus/VertexNormals.png"></section>
           <section class="text">
             Using these vertex quadrics we then iterate through all the edges in the graph and add them to an EdgeRecord. EdfeRecord uses the quadrics of the two vertices of the edges, the sum of which is the quadric for the edge, to calculate the optimal position for the resulting vertex of an edge collapse. This is done by choosing the x that minimizes the distance equation:
           </section>
-            <section class="equation"><img src="./images/plane.png"></section>
+            <section class="equation"><img src="assets/meshedit_plus_plus/plane.png"></section>
           <section class="text">
             We can rewrite this equation as the linear system:
           </section>
-          <section class="equation"><img src="./images/system.png"></section>
+          <section class="equation"><img src="assets/meshedit_plus_plus/system.png"></section>
           <section class="text">
             Where A is:
           </section>
-          <section class="equation"><img src="./images/A.png"></section>
+          <section class="equation"><img src="assets/meshedit_plus_plus/A.png"></section>
           <section class="text">
             And b is:
           </section>
-          <section class="equation"><img src="./images/B.png"></section>
+          <section class="equation"><img src="assets/meshedit_plus_plus/B.png"></section>
           <section class="text">
             Using this system we can solve for x by calucating:
           </section>
-          <section class="equation"><img src="./images/solve.png"></section>
+          <section class="equation"><img src="assets/meshedit_plus_plus/solve.png"></section>
           <section class="text">
           The rest of the simplification algorithm is as follows:
           </section>
@@ -340,17 +339,17 @@
             <section class="text">
             Here are some examples of meshes being simplified.
             </section>
-              <section class="line-image-2"><img src="./images/teapot_mesh.png"></section>
-              <section class="line-image-2"><img src="./images/teapot_mesh_simple.png"></section>
+              <section class="line-image-2"><img src="assets/meshedit_plus_plus/teapot_mesh.png"></section>
+              <section class="line-image-2"><img src="assets/meshedit_plus_plus/teapot_mesh_simple.png"></section>
             <section class="text">
             </section>
             <section class="text">
             For this mesh the number of faces gets reduced from 5856 to 3000 to 1000 to 200:
             </section>
-              <section class="line-image-2"><img src="./images/cow1.png"></section>
-              <section class="line-image-2"><img src="./images/cow2.png"></section>
-              <section class="line-image-2"><img src="./images/cow3.png"></section>
-              <section class="line-image-2"><img src="./images/cow4.png"></section>
+              <section class="line-image-2"><img src="assets/meshedit_plus_plus/cow1.png"></section>
+              <section class="line-image-2"><img src="assets/meshedit_plus_plus/cow2.png"></section>
+              <section class="line-image-2"><img src="assets/meshedit_plus_plus/cow3.png"></section>
+              <section class="line-image-2"><img src="assets/meshedit_plus_plus/cow4.png"></section>
               <section class="text">
             </pre>
           </p>

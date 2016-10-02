@@ -262,6 +262,26 @@ a {
       @extend .image;
       margin-top: $textMargin / 3;
     }
+
+    .equation {
+      img {
+        @include center();
+      }
+    }
+
+    .line-image {
+      @extend .image;
+      @include col(1/3);
+      display: inline-block;
+      margin-right: -0px
+    }
+
+    .line-image-2 {
+      @extend .image;
+      @include col(1/2);
+      display: inline-block;
+      margin-right: -0px
+    }
   }
 }
 
