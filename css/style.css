@@ -180,20 +180,20 @@
 /* Variables */
 /* Media Queries */
 @media only screen and (max-width: 600px) {
-  .content, .main, .work {
+  .content, .work {
     display: block;
     clear: both;
     float: none;
     width: 100%;
     margin-left: auto;
     margin-right: auto; }
-    .content:first-child, .main:first-child, .work:first-child {
+    .content:first-child, .work:first-child {
       margin-left: auto; }
-    .content:last-child, .main:last-child, .work:last-child {
+    .content:last-child, .work:last-child {
       margin-right: auto; } }
 /* Global Styles */
 * {
-  font-family: 'Fira Sans', 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
+  font-family: 'Neue Haas Unica Pro', 'Source Code Pro', 'Helvetica Neue', sans-serif;
   margin: 0px; }
 
 @media only screen and (max-width: 600px) {
@@ -232,6 +232,8 @@ a {
 .top {
   height: 100px;
   width: 100%; }
+  .top ul {
+    padding-left: 0px; }
   .top nav li {
     font-size: 14px;
     display: inline-block; }
@@ -239,14 +241,13 @@ a {
     font-weight: 800;
     font-size: 30px;
     margin-top: 40px;
-    margin-left: 40px;
     margin-bottom: 5px; }
 
 .container {
   height: 100%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 3.75%;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 10px;
   margin-top: 0;
   -webkit-animation: fadein 1.5s;
   /* Safari, Chrome and Opera > 12.1 */
@@ -258,28 +259,30 @@ a {
   /* Opera < 12.1 */
   animation: fadein 1.5s; }
 
-.content article .image img, .main article .image img, .work article .image img, .work article .subimage img, .work article .line-image img, .work article .line-image-2 img {
+.content article .image img, .work article .image img, .work article .subimage img, .work article .line-image img, .work article .line-image-2 img {
   width: 100%;
   height: 100%;
   overflow: hidden;
   box-shadow: 0px 0px 10px transparent;
   transition: box-shadow 0.25s ease-out; }
-.content article .image a:hover, .main article .image a:hover, .work article .image a:hover, .work article .subimage a:hover, .work article .line-image a:hover, .work article .line-image-2 a:hover {
+.content article .image .transparent img, .work article .image .transparent img, .work article .subimage .transparent img, .work article .line-image .transparent img, .work article .line-image-2 .transparent img {
+  opacity: 0.8; }
+.content article .image a:hover, .work article .image a:hover, .work article .subimage a:hover, .work article .line-image a:hover, .work article .line-image-2 a:hover {
   border-bottom: 1px solid transparent; }
-.content article .title, .main article .title, .work article .title {
+.content article .title, .work article .title {
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: 800; }
-.content article .text, .main article .text, .work article .text, .work article .tagline {
+.content article .text, .work article .text, .work article .tagline {
   margin-top: 80px;
   margin-bottom: 80px;
   color: #666666;
   font-size: 14px;
   line-height: 2;
   font-weight: 100; }
-  .content article .text a, .main article .text a, .work article .text a, .work article .tagline a {
+  .content article .text a, .work article .text a, .work article .tagline a {
     cursor: pointer; }
-.content article .project-tab, .main article .project-tab, .work article .project-tab {
+.content article .project-tab, .work article .project-tab {
   *zoom: 1;
   float: left;
   clear: none;
@@ -287,26 +290,29 @@ a {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%; }
-  .content article .project-tab:before, .main article .project-tab:before, .work article .project-tab:before, .content article .project-tab:after, .main article .project-tab:after, .work article .project-tab:after {
+  .content article .project-tab:before, .work article .project-tab:before, .content article .project-tab:after, .work article .project-tab:after {
     content: '';
     display: table; }
-  .content article .project-tab:after, .main article .project-tab:after, .work article .project-tab:after {
+  .content article .project-tab:after, .work article .project-tab:after {
     clear: both; }
-  .content article .project-tab:last-child, .main article .project-tab:last-child, .work article .project-tab:last-child {
+  .content article .project-tab:last-child, .work article .project-tab:last-child {
     margin-right: 0%; }
-  .content article .project-tab .title, .main article .project-tab .title, .work article .project-tab .title {
+  .content article .project-tab .title, .work article .project-tab .title {
     margin-bottom: 0px; }
-  .content article .project-tab .text, .main article .project-tab .text, .work article .project-tab .text, .work article .project-tab .tagline {
-    margin-top: 0px;
+  .content article .project-tab .text, .work article .project-tab .text, .work article .project-tab .tagline {
+    margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 12px; }
+    font-size: 14px;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.6; }
 
 .main article {
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 48.5%;
+  width: 22.75%;
   margin-left: 0%;
   margin-right: 3%; }
   .main article:before, .main article:after {
