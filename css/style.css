@@ -131,7 +131,6 @@
 /**
  * Apply a clearfix to an element.
  */
-@import 'https://fonts.googleapis.com/css?family=Fira+Sans:300,700';
 @keyframes fadein {
   from {
     opacity: 0; }
