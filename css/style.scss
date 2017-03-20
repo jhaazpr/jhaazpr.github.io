@@ -42,7 +42,7 @@
 
 /* Variables */
 
-$topHeight: 100px;
+$topHeight: 80px;
 $baseContainerMargin: 40px;
 $titleMargin: 20px;
 $textMargin: 80px;
@@ -53,6 +53,7 @@ $grey: #666666;
 $black: #000000;
 $white: #ffffff;
 
+$smallTextSize: 12px;
 $textSize: 14px;
 $textLineHeight: 2.0;
 $headTextSize: 30px;
@@ -124,7 +125,7 @@ a {
   }
 
   .logo {
-    font-weight: 800;
+    font-weight: 600;
     font-size: $headTextSize;
     margin-top: $baseContainerMargin;
     margin-bottom: 5px;
@@ -163,16 +164,29 @@ a {
     .title {
       margin-top: $titleMargin;
       margin-bottom: $titleMargin;
-      font-weight: 800;
+      font-weight: 600;
     }
 
     .text {
-      margin-top: $textMargin;
-      margin-bottom: $textMargin;
+      // margin-top: $textMargin;
+      // margin-bottom: $textMargin;
       color: $grey;
       font-size: $textSize;
       line-height: $textLineHeight;
-      font-weight: 100;
+      font-weight: lighter;
+
+      a {
+        cursor: pointer;
+      }
+    }
+
+    .subtext {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: $grey;
+      font-size: $smallTextSize;
+      line-height: $textLineHeight;
+      font-weight: lighter;
 
       a {
         cursor: pointer;
@@ -315,6 +329,10 @@ a {
       margin-right: -0px
     }
   }
+}
+
+.about-title:focus ~ .about-detail {
+ display: none;
 }
 
 .transparent {

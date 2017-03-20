@@ -229,7 +229,7 @@ a {
 
 /* Main styles */
 .top {
-  height: 100px;
+  height: 80px;
   width: 100%; }
   .top ul {
     padding-left: 0px; }
@@ -456,6 +456,6 @@ a {
   margin-bottom: 20px; }
 
 .bottom {
-  height: 100px;
+  height: 80px;
   width: 100%;
   bottom: 0px; }
