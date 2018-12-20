@@ -1,0 +1,26 @@
+{
+  "name": "machineagency.github.io",
+  "version": "1.0.0",
+  "description": "Machine Agency Website",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/machineagency/machineagency.github.io.git"
+  },
+  "author": "Jasper Tran O'Leary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/machineagency/machineagency.github.io/issues"
+  },
+  "homepage": "https://github.com/machineagency/machineagency.github.io#readme",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0",
+    "lost": "^8.3.0"
+  }
+}
