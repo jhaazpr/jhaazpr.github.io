@@ -38,6 +38,14 @@ a:hover {
     text-decoration: underline;
 }
 
+.padding-top-std {
+    padding-top: 3.5%;
+}
+
+.padding-top-half {
+    padding-top: 1.75%;
+}
+
 .padding-bottom-std {
     padding-bottom: 3.5%;
 }
@@ -46,11 +54,13 @@ a:hover {
     padding-bottom: 1.75%;
 }
 
+/* Main */
+
 .main-container-section {
     /* lost-align: left; */
     height: 90%;
-    width: 80%;
-    max-width: 980px;
+    width: 90%;
+    max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
     padding: 5% 10% 5% 10%;
@@ -82,215 +92,65 @@ a:hover {
     clear: both;
 }
 
-.page-teaser-image {
+.content-row {
+    height: 500px;
+}
+
+.main-content-block {
+    background-color: #f4065c;
     height: 100%;
-    width: 100%;
-    opacity: 0.8;
+    width: calc(99.9% * 3/5 - (30px - 30px * 3/5));
 }
 
-.half-col {
-    width: calc(99.9% * 1/2 - (30px - 30px * 1/2));
-}
-
-.half-col:nth-child(1n) {
+.main-content-block:nth-child(1n) {
     float: left;
     margin-right: 30px;
     clear: none;
 }
 
-.half-col:last-child {
+.main-content-block:last-child {
     margin-right: 0;
 }
 
-.half-col:nth-child(2n) {
+.main-content-block:nth-child(5n) {
     margin-right: 0;
     float: right;
 }
 
-.half-col:nth-child(2n + 1) {
+.main-content-block:nth-child(5n + 1) {
     clear: both;
 }
 
-.vgrid-item {
-    width: 100%;
-    height: calc(99.9% * 1/3 - (30px - 30px * 1/3));
-    margin-bottom: 30px;
+.main-image-block {
+    background-color: #ffffff;
+    height: 100%;
+    width: calc(99.9% * 2/5 - (30px - 30px * 2/5));
 }
 
-.vgrid-item:last-child {
-    margin-bottom: 0;
-}
-
-.page-headline {
-    font-weight: bold;
-    font-size: 2em;
-}
-
-.page-subheadline {
-    color: #aaaaaa;
-    font-size: 0.75em;
-}
-
-.page-mission {
-    font-style: italic;
-    font-size: 1em;
-}
-
-.headline {
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.projects-section {
-    float: left;
-}
-
-.project-tile {
-    width: calc(99.9% * 1/3 - (30px - 30px * 1/3));
-    max-width: calc(99.9% * 1/3 - (30px - 30px * 1/3));
-    height: calc(99.9% * 1/3 - (30px - 30px * 1/3));
-}
-
-.project-tile:nth-child(1n) {
+.main-image-block:nth-child(1n) {
     float: left;
     margin-right: 30px;
-    margin-bottom: 30px;
     clear: none;
 }
 
-.project-tile:last-child {
-    margin-right: 0;
-    margin-bottom: 0;
-}
-
-.project-tile:nth-child(3n) {
+.main-image-block:last-child {
     margin-right: 0;
 }
 
-.project-tile:nth-child(3n + 1) {
-    clear: both;
-}
-
-.project-tile:nth-last-child(-n + 3) {
-    margin-bottom: 0;
-}
-
-.project-photo {
-    height: 100%;
-    width: 100%;
-    opacity: 0.9;
-}
-
-.project-title {
-    font-size: 0.85em;
-    font-weight: bold;
-}
-
-.project-text {
-    font-size: 0.75em;
-}
-
-.people-tile {
-    width: calc(99.9% * 1/4 - (20px - 20px * 1/4));
-}
-
-.people-tile:nth-child(1n) {
-    float: left;
-    margin-right: 20px;
-    clear: none;
-}
-
-.people-tile:last-child {
-    margin-right: 0;
-}
-
-.people-tile:nth-child(4n) {
+.main-image-block:nth-child(5n) {
     margin-right: 0;
     float: right;
 }
 
-.people-tile:nth-child(4n + 1) {
+.main-image-block:nth-child(5n + 1) {
     clear: both;
 }
 
-.people-section {
-    display: block;
-}
-
-.people-photo {
-    max-width: 200px;
-    max-height: 200px;
-    height: 100%;
-    width: 100%;
-    opacity: 0.9;
-}
-
-.people-title {
-    font-size: 1em;
+.name {
     font-weight: bold;
-}
-
-.people-text {
-    font-size: 0.75em;
-}
-
-.people-section {
-    display: block;
+    font-size: 24px;
 }
 
 @media screen and (max-width: 400px) {
-    .project-tile {
-        width: calc(99.9% * 1 - (30px - 30px * 1));
-        max-width: calc(99.9% * 1 - (30px - 30px * 1));
-        height: calc(99.9% * 1 - (30px - 30px * 1));
-    }
-    .project-tile:nth-child(1n) {
-        float: left;
-        margin-right: 30px;
-        margin-bottom: 30px;
-        clear: none;
-    }
-    .project-tile:last-child {
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-    .project-tile:nth-child(NaNn) {
-        margin-right: 0;
-    }
-    .project-tile:nth-child(NaNn + 1) {
-        clear: both;
-    }
-    .project-tile:nth-last-child(-n + NaN) {
-        margin-bottom: 0;
-    }
-
-    .people-tile {
-        width: calc(99.9% * 1/2 - (30px - 30px * 1/2));
-        max-width: calc(99.9% * 1/2 - (30px - 30px * 1/2));
-        height: calc(99.9% * 1/2 - (30px - 30px * 1/2));
-    }
-
-    .people-tile:nth-child(1n) {
-        float: left;
-        margin-right: 30px;
-        margin-bottom: 30px;
-        clear: none;
-    }
-
-    .people-tile:last-child {
-        margin-right: 0;
-        margin-bottom: 0;
-    }
-
-    .people-tile:nth-child(2n) {
-        margin-right: 0;
-    }
-
-    .people-tile:nth-child(2n + 1) {
-        clear: both;
-    }
-
-    .people-tile:nth-last-child(-n + 2) {
-        margin-bottom: 0;
-    }
+    /* To do */
 }
