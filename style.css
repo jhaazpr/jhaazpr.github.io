@@ -60,6 +60,8 @@ a:hover {
     position: absolute;
     left: 0px;
     top: 0px;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 
 .left-pane {
@@ -71,9 +73,21 @@ a:hover {
 
 .name-title {
     font-weight: 800;
-    font-size: 48px;
+    font-size: 36px;
     letter-spacing: 0.0625em;
 }
 
 .name-title {
+}
+
+.middle-right-pane-wrapper {
+    margin-left: 100px;
+}
+
+.middle-pane {
+    display: inline-block;
+}
+
+.right-pane {
+    display: inline-block;
 }
