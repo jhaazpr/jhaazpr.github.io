@@ -62,7 +62,7 @@ a:hover {
     top: 0px;
     margin-left: 1em;
     margin-top: 1em;
-    z-index: -1;
+    z-index: -1; /* the wrapper extends over a link because rotation */
 }
 
 .left-pane {
@@ -76,9 +76,12 @@ a:hover {
     font-weight: 800;
     font-size: 36px;
     letter-spacing: 0.0625em;
+    margin-bottom: 0.25em;
 }
 
-.name-title {
+.blurb-title {
+    font-weight: lighter;
+    font-style: italic;
 }
 
 .middle-right-pane-wrapper {
@@ -91,7 +94,7 @@ a:hover {
 
 .project-list {
     list-style: none;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -106,4 +109,16 @@ a:hover {
 
 .right-pane {
     display: inline-block;
+    margin-left: 100px;
+    position: absolute;
+    top: 2em;
+}
+
+.article-image {
+    max-width: 400px;
+    margin-bottom: 2em;
+}
+
+.article-hero {
+    margin-bottom: 2em;
 }
