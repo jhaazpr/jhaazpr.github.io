@@ -5,161 +5,73 @@
       type="image/png"
       href="assets/favicon.png">
 <title>Jasper O'Leary</title>
-<link href="css/style.css" rel="stylesheet">
+<meta property="og:title" content="Jasper O'Leary" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://jasperoleary.com" />
+<meta property="og:image" content="assets/self.jpg" />
+<link href="style.css" rel="stylesheet">
+</script>
 </head>
 <body>
-  <div class="container">
-    <div class="top">
-    <div class="logo">Jasper O'Leary</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-        </ul>
-      </nav>
+    <div class="main-container">
+        <div class="left-pane-wrapper">
+            <div class="left-pane gray">
+                <div class="name-title">Jasper Tran O'Leary</div>
+                <div class="blurb-title">This is a blurb about me</div>
+            </div>
+        </div>
+        <div class="middle-right-pane-wrapper">
+            <div class="middle-pane">
+                <ul class="project-list gray">
+                    <li class="project-list-item">
+                        <a href="">Machine-o-Matic</a>
+                    </li>
+                    <li class="project-list-item black">
+                        <a href=""><span class="highlight">Illumination Aesthetics</span></a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="">Charrette</a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="">Aesthetic Electronics</a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="">Live Objects</a>
+                    </li>
+                    <li class="project-list-item italic">
+                        <a href="">Blog</a>
+                    </li>
+                    <li class="project-list-item italic">
+                        <a href="">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-pane">
+                <img class="article-image" src="./assets/light_as_material/blue.png"/>
+                <div class="article-hero">
+                    <ul class="hero-list">
+                        <li class="hero-list-item">Light as a creative material within computational design.</li>
+                        <li class="hero-list-item">Cesar Torres, Jasper Tran O'Leary, Molly Nicholas, Eric Paulos</li>
+                        <li class="hero-list-item bold">CHI '17. Best Paper Award.</li>
+                    </ul>
+                </div>
+                <div class="article-text">
+                    Light as Material is a project that probes the use of light as an interactive medium. I worked on this project with Cesar Torres and Molly Nicholas in the Hybrid Ecologies Lab lead by Professor Eric Paulos.
+                    <br/>
+                    <br/>
+In the paper, we introduce a design tool that translates a user's drawings into printable parts for constructing a custom luminaire. The tool allows users to experiment with different designs and LED colors and placement, and a specialized ray tracer allows the user to vizualize the result in real-time.
+<br/>
+                    <br/>
+
+My role in the project was assisting in building the front-end and back-end tools, handling the fabrication of custom lenses, finding the optimal means of mixing silicone light diffusers, and creating a use case for the tool, described below.
+                <div class="bold">Computational Tool</div>
+                The tool uses the paper.js vector graphics scripting framework which enables common vector editing operations and backwards compatibility with vector graphics applications. In order to carry over tool-specific data (e.g. annotating vector elements that corresponded to LEDs), we overwrote the SVG data attribute with a JSON string. From an initial SVG design, the tool allows the user to specify two types of elements: elements which block light (hard edge), and elements which allowed light to pass through (soft edge).
+At a high level, the design tool allows users a single operation: place, remove, and move LED elements in a scene. Otherwise, all interactions with the design take place in an external vector graphics editor in order to leverage user’s knowledge of and expertise with existing graphic design tools.
+In order to support the luminaire design tool, we built a computational design backend for constructing a secondary optics system, or the design of fixtures and elements that alter the distribution of luminous intensity from the light source. Such distributions can diffuse, redirect, or focus light. For instance, a collimating optic on a bike light redirects light rays such that they become parallel to each other, increasing the light’s viewability from a distance and maximizing the lumens over a given area of focus - like the pavement in front of the bike. Our work explores the creation of secondary optics to diffuse light over an area.
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="work">
-      <article class="project">
-        <section class="image"><img src="assets/light_as_material/light_as_material_cover.jpg"></section>
-        <section class="title">Illumination Aesthetics</section>
-        <section class="tagline">
-          Light as a creative material within computational design.
-          <nav>
-            <ul>
-              <li><a href="#">Cesar Torres,</a></li>
-              <li><a href="#">Jasper O'Leary,</a></li>
-              <li><a href="#">Molly Nicholas,</a></li>
-              <li><a href="#">Eric Paulos</a></li>
-            </ul>
-          </nav>
-          <strong>CHI '17, Best Paper Award</strong>
-        </section>
-        <section class="header">
-          Overview
-        </section>
-        <section class="text">
-          Light as Material is a project that probes the use of light as an interactive medium.
-          I worked on this project with Cesar Torres and Molly Nicholas in the Hybrid Ecologies
-          Lab lead by Professor Eric Paulos.
-        </section>
-
-        <section class="text">
-          In the paper, we introduce a design tool that translates a user's drawings into printable
-          parts for constructing a custom luminaire. The tool allows users to experiment with different
-          designs and LED colors and placement, and a specialized ray tracer allows the user to
-          vizualize the result in real-time.
-        </section>
-
-        <section class="text">
-          My role in the project was assisting in building the front-end and back-end tools,
-          handling the fabrication of custom lenses, finding the optimal means of mixing
-          silicone light diffusers, and creating a use case for the tool, described below.
-        </section>
-        <section class="text">
-            <strong>
-              <a href="./assets/light_as_material/lam_paper.pdf">Read the full paper here (local copy).</a>
-              <a href="https://www.youtube.com/watch?v=tcaZyJqJElw">Or, watch the project's video here.</a>
-            </strong>
-        </section>
-
-        <section class="header">
-          Computational Tool
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/pipeline.jpg"></section>
-        <section class="text">
-          The tool uses the paper.js vector graphics scripting framework which enables common
-          vector editing operations and backwards compatibility with vector graphics applications.
-          In order to carry over tool-specific data (e.g. annotating vector elements that
-          corresponded to LEDs), we overwrote the SVG data attribute with a JSON string.
-          From an initial SVG design, the tool allows the user to specify two types of
-          elements: elements which block light (hard edge), and elements which allowed light to
-          pass through (soft edge).
-        </section>
-        <section class="text">
-          At a high level, the design tool allows users a single operation: place, remove,
-          and move LED elements in a scene. Otherwise, all interactions with the design
-          take place in an external vector graphics editor in order to leverage user’s
-          knowledge of and expertise with existing graphic design tools.
-        </section>
-        <section class="text">
-          In order to support the luminaire design tool, we built a computational
-          design backend for constructing a secondary optics system, or the design
-          of fixtures and elements that alter the distribution of luminous intensity
-          from the light source. Such distributions can diffuse, redirect, or focus
-          light. For instance, a collimating optic on a bike light redirects light
-          rays such that they become parallel to each other, increasing the light’s
-          viewability from a distance and maximizing the lumens over a given area
-          of focus - like the pavement in front of the bike. Our work explores the
-          creation of secondary optics to diffuse light over an area.
-        </section>
-
-        <section class="header">
-          Fabrication
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/sun_reflector.jpg"></section>
-        <section class="text">
-          One of the most powerful and useful parts of our system is that it automatically generates all of the necessary files to construct the final luminaire. From the user’s perspective, once they have finalized their design, the tool outputs five files 1) the 3D enclosure model, 2) a model to cast or print a diffuser, 3) a 3D reflector model, 4) a PCB board design file, and 5) microcontroller code to control the final LED assembly.
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/slices.png"></section>
-        <section class="text">
-          I validated the effectiveness of out components with empirical testing. The graph above
-          shoes the luminous intensity curves of LEDs outfitted with several diffuser types. To obtain the
-          graph, I photographed all different diffusers over an LED, cleaned and applied filters to the
-          resulting images, extracted profile curves from pixel values, applied Gaussian smoothing
-          and plotted them. We see that the components outperform the controls in producing smooth
-          distributions of light.
-        </section>
-
-        <section class="header">
-          Use Case: Harvard Square Model
-        </section>
-        <section class="text">
-          As an example of what a custom interactive light display could be, I set out
-          to make a luminaire of Harvard Square in Cambridge, MA, starting with a drawing
-          of the city plan.
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/city_plan_blank.png"></section>
-        <section class="subimage"><img src="assets/light_as_material/city_axon.png"></section>
-        <section class="text">
-          In the program, we placed the LEDs strategically to illuminate the buildings.
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/city_screenshot.png"></section>
-        <section class="text">
-          I first did a minature test print of the volumetric diffuser out of clear SLA.
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/city_printing.jpg"></section>
-        <section class="subimage"><img src="assets/light_as_material/city_printed.jpg"></section>
-        <section class="subimage"><img src="assets/light_as_material/city_double_final.jpg"></section>
-        <section class="text">
-          Satisfied with the results, I printed a full-scale mold to fill with the empirically
-          determined silicone mixture to best difuse the light.
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/city_mold.jpg"></section>
-        <section class="text">
-          The final luminaire:
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/light_as_material_cover.jpg"></section>
-
-        <section class="header">
-          User Studies and Results
-        </section>
-        <section class="subimage"><img src="assets/light_as_material/userstudy.jpg"></section>
-        <section class="text">
-          We invited participants to design their own luminaires. The main goal of the user
-          study was to obtain qualitative feedback on how the design tool facilitated luminaire
-          design. We were especially interested in understanding a user’s mental model of light,
-          and what new functions and aesthetic choices this new understanding would afford.
-        </section>
-        <section class="text">
-          Even in a brief workshop-style experience, with minimal experience with the tool
-          and only an introduction to this novel way of working with light, users readily
-          generated unique light interactions. A shift in vocabulary reflected this new understanding
-          of the various aesthetic uses of light. We found that simulated light beams afforded deeper
-          and more novel explorations of light.
-        </section>
-
-      </article>
-    </div>
-  </div>
-  <div class="bottom"></div>
 </body>
 </html>
+

@@ -52,6 +52,22 @@ a:hover {
     text-decoration: underline;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.black {
+    color: #222222;
+}
+
+.gray {
+    color: #cccccc;
+}
+
+.highlight {
+    background-color: #fff500;
+}
+
 .main-container {
     position: relative;
 }
@@ -112,13 +128,29 @@ a:hover {
     margin-left: 100px;
     position: absolute;
     top: 2em;
+    overflow: scroll;
+    width: 400px;
 }
 
 .article-image {
-    max-width: 400px;
+    max-width: 300px;
     margin-bottom: 2em;
 }
 
-.article-hero {
+.hero-list {
     margin-bottom: 2em;
+    list-style: none;
+    font-size: 12px;
+    padding-left: inherit;
+    margin-left: 0px;
+    font-style: italic;
+}
+
+.hero-list-item {
+    margin-bottom: 0.75em
+}
+
+.article-text {
+    font-size: 12px;
+    line-height: 2em;
 }
