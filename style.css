@@ -88,6 +88,21 @@ a:hover {
     display: inline-block;
 }
 
+.project-list {
+    list-style: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.project-list-item {
+    margin-bottom: 1em;
+}
+
+.project-list-item.italic {
+    font-weight: lighter;
+    font-style: italic;
+}
+
 .right-pane {
     display: inline-block;
 }
