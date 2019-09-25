@@ -81,7 +81,7 @@ img {
 .left-pane-wrapper {
     position: absolute;
     left: 0px;
-    top: 0px;
+    top: 0.5em;
     margin-left: 1em;
     margin-top: 1em;
     z-index: -1; /* the wrapper extends over a link because rotation */
@@ -92,6 +92,7 @@ img {
     transform-origin: 100% 0;
     position: relative;
     left: -100%;
+    text-align: right;
 }
 
 .name-title {
@@ -104,6 +105,7 @@ img {
 .blurb-title {
     font-weight: lighter;
     font-style: italic;
+    font-size: 0.85em;
 }
 
 .middle-right-pane-wrapper {
