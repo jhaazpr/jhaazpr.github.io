@@ -43,6 +43,14 @@ body {
     background-color: #ffffff;
 }
 
+::-moz-selection { /* Code for Firefox */
+  background: #fff500;
+}
+
+::selection {
+  background: #fff500;
+}
+
 a {
     text-decoration: none;
     color: inherit;
