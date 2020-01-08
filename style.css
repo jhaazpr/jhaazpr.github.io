@@ -144,7 +144,7 @@ img {
     margin-left: 100px;
     position: absolute;
     top: 2em;
-    overflow: scroll;
+    overflow: visible;
     width: 400px;
 }
 
