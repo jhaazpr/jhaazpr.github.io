@@ -158,6 +158,10 @@ img {
     font-style: italic;
 }
 
+.bullet-list {
+    padding-left: 1em;
+}
+
 .hero-list-item {
     margin-bottom: 0.75em
 }
