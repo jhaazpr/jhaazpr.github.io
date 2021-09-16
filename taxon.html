@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="assets/favicon.png">
+<title>Jasper Tran O'Leary</title>
+<meta property="og:title" content="Jasper Tran O'Leary" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://jasperoleary.com" />
+<meta property="og:image" content="assets/self.png" />
+<link href="style.css" rel="stylesheet">
+</script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-pane-wrapper">
+            <div class="left-pane gray">
+                <div class="name-title">Jasper Tran O'Leary</div>
+                <div class="blurb-title">
+I am a PhD student building tools to help people incorporate digital fabrication into their craft.
+                </div>
+            </div>
+        </div>
+        <div class="middle-right-pane-wrapper">
+            <div class="middle-pane">
+                <ul class="project-list gray">
+                    <li class="project-list-item black">
+                        <a href="taxon.html"><span class="highlight">Taxon</span></a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="mom.html">Machine-o-Matic</a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="light_as_material.html">Illumination Aesthetics</a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="charrette.html">Charrette</a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="ellustrate.html">Aesthetic Electronics</a>
+                    </li>
+                    <li class="project-list-item">
+                        <a href="future.html">Who Gets to Future?</a>
+                    </li>
+                    <li class="project-list-item italic">
+                        <a href="other.html">Other Work</a>
+                    </li>
+                    <li class="project-list-item italic">
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li class="project-list-item italic">
+                        <a href="index.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-pane">
+                <img class="article-image" src="./assets/taxon/cover.jpg"/>
+                <div class="article-hero">
+                    <ul class="hero-list">
+                        <li class="hero-list-item">A Language for Formal Reasoning with Digital Fabrication Machines</li>
+                        <li class="hero-list-item">Jasper Tran O'Leary, Chandrakana Nandi, Khang Lee, Nadya Peek</li>
+                        <li class="hero-list-item bold">
+                            <a href="https://youtu.be/By4TMwFqmsU">Short Talk</a>,
+                            <a href="./assets/taxon/taxon-paper.pdf">UIST '21 Paper</a>,
+                            <a href="https://youtu.be/W1pRXSuVDWk">UIST '21 Talk</a>,
+                            <a href="https://github.com/machineagency/taxon">Github</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="article-text">
+                    <div class="paragraph">
+                        Despite their power and precision, making with digital fabrication machines can be incredibly frustrating.
+                        Yet, we can help makers out by using the same computer-supported reasoning that lets programmers work quickly and accurately.
+                        Even as researchers in human-computer interaction have explored many new interactions and pipelines for fabrication, makers will always have to know how to select and use machines appropriately.
+                        If a maker doesn't already have personal experience with a machine, the resources that can help them are quite scattered.
+                        It's an awful lot of work not only to find this information, but also to know how to interpret it.
+                        It would be helpful if we could distill some of this informal knowledge to a more accessible form.
+                        To do this, we built Taxon, a language that encodes machines, workflows, and rules of thumbs as programs.
+                    </div>
+                    <div class="header">
+                        System Architecture
+                    </div>
+                    <section class="subimage"><img src="assets/taxon/ui.jpg" alt="system diagram"></section>
+                    <div class="paragraph">
+                        We implemented Taxon in a web interface where makers can browse a database of machines that are all represented programmatically as machine plans.
+                        These are loaded into the scene which provides a simulation of the physical version of the machine.
+                        Then, makers write workflows which control the simulation. Crucially, they can browse and apply rules of thumb, which either filter the list of machines based on requirements, or apply safety checks to workflow code
+                    </div>
+                    <div class="header">
+                        Language Details
+                    </div>
+                    <div class="paragraph">
+                        Here we describe Taxon's syntax is Backus-Naur form.
+                        For concrete examples of Taxon code, <a href="./assets/taxon/taxon-paper.pdf">please see the paper</a>.
+                    </div>
+                    <section class="subimage"><img src="assets/taxon/bnf.png" alt="taxon grammar"></section>
+                    <div class="paragraph">
+                         Reading bottom-up, a Taxon program consists of a machine-plan and a workflow.
+                         A workflow is a list of zero or more actions.
+                         An action consists of a selector and a method to be called on the component returned by the selector.
+                         The selector returns a component of the machine-plan (which could be a block or the entire machine plan).
+                         Examples of methods are MoveTo which moves a component to a position (possibly extruding material at a rate indicated by the third argument) and Actuate which actuates a block by some amount given as the second argument.
+                         A machine plan consists of metrics and blocks.
+                         Metrics are a collection of innate properties of a machine, and blocks represent volumetric and kinematic properties of machine components.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
