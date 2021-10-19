@@ -70,6 +70,9 @@ I am a PhD student building tools to help people incorporate digital fabrication
                     <div class="paragraph">
                       You can read more about Taxon on its project page <a href="taxon.html">here</a>.
                     </div>
+                    <div class="paragraph">
+                      <strong>Please apply by emailing me at jaspero at cs dot washington dot edu. Please include a CV/resume, unofficial transcript, 3-4 sentences about why you're interested, and any solutions to the challenge problems below.</strong>
+                    </div>
                     <div class="header">
                         What Research Would Look like
                     </div>
@@ -86,9 +89,50 @@ I am a PhD student building tools to help people incorporate digital fabrication
                       I would expect applicants to have completed CSE 331, 332, and 333, or have equivalent coursework or experience. Applicants do not need prior web programming experience, though some exposure is a plus. I prefer that applicants be interested in research for the sake of doing research, rather than looking to pad their resume.
                     </div>
                     <div class="header">
-                        Practice Problem
+                        Challenge Problems
                     </div>
                     <div class="paragraph">
+                        Solving these problems is optional, but recommended if you have time. I recommend using Javascript/Typescript, but you can use any language if you really want. Please include any answer code when you email me.
+                    </div>
+                    <div class="paragraph">
+                          Write a function that takes an array of machine plans and returns an array of machine plans containing only machine plans in the input array which contain at least one block whose block type is "deltaBot". Machine plans are JSON objects whose structure is described in the BNF grammar on Taxon's project page (https://jasperoleary.com/taxon.html). For example, a machine plan has the form <pre>{ "name" : "myMachine", "blocks" : [ { "name" : "myBlock", "dimensions" : { ... }, ...], ... }</pre>.
+                    </div>
+                    <div class="paragraph">
+                          Write a function that updates the HTML element on the page (whose id is #rule-of-thumb-names) with the names of all rules of thumb as obtained via an HTTP request to the server. Be sure to handle any asynchronous function calls properly, including handling errors in the HTTP responses. Relevant info is below:
+                    <pre>
+Page HTML
+
+<body>
+	<div id="rule-of-thumb-names"></div>
+	<div id="console-where-error-messages-go"></div>
+	<div id="other-stuff"></div>
+</body>
+
+HTTP endpoint
+
+**GET /rules-of-thumb**
+
+Possible responses (JSON)
+
+200 OK
+
+{
+	"rulesOfThumb": [
+		{
+			"name" : "show beginner machines only",
+			"filtering": true,
+			"implementation": "..."
+		},
+		...
+	]
+}
+
+500 Error
+
+{
+	"message": "The server cannot handle this request for some mysterious reason."
+}
+                    </pre>
                     </div>
                 </div>
             </div>
