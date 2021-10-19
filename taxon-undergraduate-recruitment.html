@@ -112,14 +112,15 @@ I am a PhD student building tools to help people incorporate digital fabrication
                     <pre>
 {
   "name" : "myMachine",
+  "metrics" : { ... },
   "blocks" : [
     {
       "name" : "myBlock",
       "dimensions" : { ... },
+      "blockType" : "rotary"
     },
     ...
-  ],
-  ...
+  ]
 }</pre>
 			    
                     </div>
@@ -149,8 +150,8 @@ Possible responses (JSON)
  "rulesOfThumb": [
    {
      "name" : "show beginner machines only",
-     "filtering": true,
-     "implementation": "..."
+     "filtering" : true,
+     "implementation" : "..."
    },
    ...
  ]
@@ -159,7 +160,7 @@ Possible responses (JSON)
 500 Error
 
 {
-  "message": "The server cannot handle this request for some mysterious reason."
+  "message" : "The server cannot handle this request for some mysterious reason."
 }</pre>
                     </div>
                 </div>
