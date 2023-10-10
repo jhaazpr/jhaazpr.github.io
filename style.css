@@ -82,13 +82,27 @@ img {
     background-color: #fff500;
 }
 
+.fit-content {
+    width: fit-content;
+}
+
 .main-container {
     position: relative;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px * 2));
 }
+
+@media screen and (max-width: 800px) {
+    .main-container {
+      max-width: -webkit-calc(800px - (30px));
+      max-width: calc(800px - (30px));
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
 
 .left-pane-wrapper {
     position: absolute;
@@ -158,7 +172,7 @@ img {
 
 .hero-list {
     margin-top: 2em;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
     list-style: none;
     font-size: 14px;
     padding-left: inherit;
@@ -177,6 +191,10 @@ img {
 .article-text {
     font-size: 16px;
     line-height: 2em;
+}
+
+.article-image {
+    max-width: 200px;
 }
 
 .paragraph {
@@ -201,6 +219,5 @@ img {
 }
 
 .flex-child img {
-    filter: grayscale(100%);
     max-width: 220px;
 }
