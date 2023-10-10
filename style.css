@@ -84,6 +84,10 @@ img {
 
 .main-container {
     position: relative;
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    max-width: 750px;
 }
 
 .left-pane-wrapper {
@@ -106,13 +110,17 @@ img {
 .name-title {
     font-weight: 800;
     font-size: 36px;
-    letter-spacing: 0.0625em;
     margin-bottom: 0.25em;
 }
 
 .blurb-title {
     font-weight: lighter;
     font-style: italic;
+    font-size: 0.85em;
+}
+
+.blurb-list {
+    font-weight: bold;
     font-size: 0.85em;
 }
 
@@ -152,7 +160,7 @@ img {
     margin-top: 2em;
     margin-bottom: 4em;
     list-style: none;
-    font-size: 12px;
+    font-size: 14px;
     padding-left: inherit;
     margin-left: 0px;
     font-style: italic;
@@ -167,7 +175,7 @@ img {
 }
 
 .article-text {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 2em;
 }
 
@@ -178,6 +186,18 @@ img {
 .header {
     font-size: 16px;
     font-weight: bold;
+    margin-top: 2em;
     margin-bottom: 1em;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex-child {
+    margin-right: 25px;
+}
+
+.flex-child img {
+    filter: grayscale(100%);
+}
