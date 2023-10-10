@@ -84,10 +84,10 @@ img {
 
 .main-container {
     position: relative;
-    margin-top: 100px;
-    margin-left: 200px;
-    margin-right: 200px;
-    max-width: 750px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(800px - (30px * 2));
 }
 
 .left-pane-wrapper {
@@ -192,12 +192,15 @@ img {
 
 .flex {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .flex-child {
-    margin-right: 25px;
+    max-width: 220px;
 }
 
 .flex-child img {
     filter: grayscale(100%);
+    max-width: 220px;
 }
